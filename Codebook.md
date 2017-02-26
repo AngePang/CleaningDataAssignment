@@ -19,6 +19,7 @@ The variables are:
   - **activity**: the descriptive activities as in the _activity_ data.
   - **feature**: the features (feature - summary function - axis) slightly modified to make them valid R variable names.
   - **value**: the mean of **feature** for each subject and each activity.
+  
 This dataset includes both train data and test data.
 
 # About Data Processing
