@@ -44,6 +44,13 @@ First I found the features with _mean()_ and _std()_ in them:
 mean_std_cols_data = features_split %>% 
   filter(func %in% c("mean()","std()")) %>% 
   mutate(colname=paste("V",V1,sep=""))
+mean_std_cols = mean_std_cols_data %>% .[["colname"]]
+new_names = mean_std_cols_data %>% .[["new_names"]]
+X_all_ms = X_all %>% select_(.dots=mean_std_cols)
+names(X_all_ms) = new_names
+```
+and _mean_std_cols_data_ looks like:
+```R
 mean_std_cols_data
 ## A tibble: 66 × 6
 #      V1     feature   func  axis          new_names colname
