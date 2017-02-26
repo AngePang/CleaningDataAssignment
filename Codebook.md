@@ -1,6 +1,27 @@
 # Codebook
-This code book explains each step of the R script in the data cleaning assignment.
+This code book explains the variables and records of the final output data, as well as each step of the R script in the data cleaning assignment.
 
+# About Final Output Data
+The final output data looks like:
+```R
+> data_all_avg
+## A tibble: 11,880 × 4
+#   subject activity             feature      value
+#     <int>   <fctr>               <chr>      <dbl>
+#1        1   LAYING     fBodyAcc_mean_X -0.9390991
+#2        1   LAYING     fBodyAcc_mean_Y -0.8670652
+#3        1   LAYING     fBodyAcc_mean_Z -0.8826669
+#4        1   LAYING      fBodyAcc_std_X -0.9244374
+#5        1   LAYING      fBodyAcc_std_Y -0.8336256
+```
+The variables are:
+  - **subject**: original subject numbers as in the _subject_train_ and _subject_test_ data.
+  - **activity**: the descriptive activities as in the _activity_ data.
+  - **feature**: the features (feature - summary function - axis) slightly modified to make them valid R variable names.
+  - **value**: the mean of **feature** for each subject and each activity.
+This dataset includes both train data and test data.
+
+# About Data Processing
 ##0. Setup and Loading Data
 First assume data are unzipped and placed in a folder called UCI HAR Dataset, under the root directory. Also assume R working directory has been set up to the root directory.
 
