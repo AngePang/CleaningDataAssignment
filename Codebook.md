@@ -4,7 +4,7 @@ This code book explains each step of the R script in the data cleaning assignmen
 ##0. Setup and Loading Data
 First assume data are unzipped and placed in a folder called UCI HAR Dataset, under the root directory. Also assume R working directory has been set up to the root directory.
 
-The first step is to load data. I simply use read.table() and turn it in to _tbl_ objects. For example, to load train data I do:
+The first step is to load data. I simply use _read.table()_ and turn it in to _tbl_ objects. For example, to load train data I do:
 ```R
 X_train = read.table("train/X_train.txt") %>% as.tbl()
 y_train = read.table("train/y_train.txt") %>% as.tbl()
@@ -52,7 +52,7 @@ mean_std_cols_data
 #2      2    tBodyAcc mean()     Y    tBodyAcc_mean_Y      V2
 #3      3    tBodyAcc mean()     Z    tBodyAcc_mean_Z      V3
 ```
-Then _mean_std_cols_ are the old names (V1, V2, etc) and _new_names_ are the new names (tBodyAcc_mean_X, tBodyAcc_mean_X, etc). Finally I create a data called _X_all_ms_, which is the _X_all_ with new names.
+Then _mean_std_cols_ are the old names (V1, V2, etc) and _new_names_ are the new names (tBodyAcc_mean_X, tBodyAcc_mean_X, etc). Finally I create a data called _X_all_ms_, which is the _X_all_ with new names for **m**ean and **s**td.
 
 ##3. Rename activity to meaningful names.
 _y_all_label_ is the _y_all_ with levels more readable than an encoded integer. Also I renamed the labels to _activity_.
